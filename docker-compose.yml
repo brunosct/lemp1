@@ -1,0 +1,15 @@
+version: "3"
+services:
+  nginx:
+    build:
+      context: nginx
+      dockerfile: Dockerfile.debian
+    ports:
+      - 80:80
+    volumes:
+      - ./html:/app/test1
+      - ./nginx/sitio1.conf:/etc/nginx/conf.d/sitio1.conf
+      # - ./nginx/www.conf-debian7.4:/etc/php/7.4/fpm/pool.d/www.conf
+      - ./nginx/www.conf-ubuntu8.1:/etc/php/8.1/fpm/pool.d/www.conf
+      - ./nginx/entrypoint.sh:/sbin/entrypoint.sh
+      
