@@ -6,6 +6,9 @@ services:
       - 80:80
     volumes:
       - ./html:/app/test1
-      - ./nginx/sitio1.conf:/etc/nginx/conf.d/sitio1.conf
+      - ./nginx/sitio2.conf:/etc/nginx/conf.d/sitio2.conf
   php:
     build: php
+    volumes:
+      - ./html:/app/test1    
+      - ./php/www.conf:/etc/php/8.2/fpm/pool.d/www.conf
